@@ -14,25 +14,27 @@ def get_factors(num):
     return factors
 
 def main():
-    try:
-        # Prompt user for a positive integer
-        num = int(input("Please enter a positive integer: "))
+    while True:
+        try:
+            # Prompt user for a positive integer
+            num = int(input("Please enter a positive integer: "))
 
-        if num <= 0:
-            raise ValueError("Number must be a positive integer.")
+            if num <= 0:
+                raise ValueError("Number must be a positive integer.")
 
-        # Get list of factors
-        factors = get_factors(num)
+            # Get list of factors
+            factors = get_factors(num)
 
-        # Print factors
-        print(f"The factors of {num} are:")
-        for factor in factors:
-            print(factor)
+            # Print factors
+            print(f"The factors of {num} are:")
+            for factor in factors:
+                print(factor)
+            break
 
-    except ValueError as ve:
-        print(f"Error: {ve}. Please enter a valid positive integer.")
-    except Exception as e:
-        print(f"Error: {e}. An unexpected error occurred.")
+        except ValueError as ve:
+            print(f"{ve} Please enter a valid positive integer.")
+        except Exception as e:
+            print(f"{e} An unexpected error occurred.")
 
 if __name__ == "__main__":
     main()
